@@ -1,0 +1,18 @@
+$fruitier-map: (
+  apple: (green, 1px solid black),
+  lemon: (yellow, 2px dashed grey),
+  strawberry: (red, 3px dotted orange)
+);
+
+@each $fruit, $fruit-colours in $fruitier-map {
+  $bg-colour: nth($fruit-colours, 1);
+  $border-style: nth($fruit-colours, 2);
+
+  .#{$fruit}-button {
+    background-color: #{$bg-colour};
+    border: #{$border-style};
+    width:200px;
+    height:100px;
+    font-size: 2rem;
+  }
+}
